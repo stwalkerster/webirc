@@ -13,7 +13,7 @@
 	<div id="foot-left">
 		<p>Valid stuff</p>
 	</div>
-	<div id="foot-roght">
+	<div id="foot-right">
 		<p>Developed by X, Y, Z</p>
 	</div>
 </div>
