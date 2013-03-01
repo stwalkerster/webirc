@@ -18,9 +18,9 @@
 	</ul>
 	<h2>Other files</h2>
 	<ul>
-		<li><a href="style.css">Stylesheet</a></li>
-		<li><a href="java/src/Client.java">Client code</a></li>
-		<li><a href="form.js">Validation javascript</a></li>
+		<li><a href="style.css">Stylesheet</a> (Dean Thomson)</li>
+		<li><a href="java/src/Client.java">Applet code</a> (Simon Walker)</li>
+		<li><a href="form.js">Validation javascript</a> (David Sturrock)</li>
 	</ul>
 	
 	
