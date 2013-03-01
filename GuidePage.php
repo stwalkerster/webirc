@@ -15,9 +15,6 @@
 }
 
 </style>
-
-</head>
-<body>
 <script type="text/javascript" >
 function showDiffLayer(int){
 	if(int == 1){
@@ -44,6 +41,8 @@ function mainPage(){
 	location.href="overview.php";
 }
 </script>
+</head>
+
 
 <body>
 <div id="header"><h1>IRC Client</h1>
