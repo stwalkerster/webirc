@@ -11,7 +11,7 @@
 .container {
 	position: absolute;
 	color: #FFF;
-	margin: 0em 0em 0em 20em;
+	margin: 0em 0em 0em 10em;
 }
 
 </style>
@@ -39,6 +39,10 @@ function showDiffLayer(int){
 		cpLayer.style.visibility = "hidden";
 	}
 }
+
+function mainPage(){
+	location.href="overview.html";
+}
 </script>
 
 <div id="header"><h1>IRC Client</h1>
@@ -61,7 +65,7 @@ function showDiffLayer(int){
   			<button type="submit"id="b3" onclick="showDiffLayer(3)">Mainpage</button>
   		</td>
   		<td>
-  			<button type="submit"id="b4" onclick="">Home</button>
+  			<button type="submit"id="b4" onclick="mainPage()">Home</button>
   		</td>
 	</tr>
 </table>
@@ -70,33 +74,39 @@ function showDiffLayer(int){
 
 <div class ="container" div id="introLayer" style=" visibility:visible;"> 
 <p>Welcome to the chat forum. You can select the above buttons to view the guide information for each part of the website.</p>
-<p>If you want to return to the main page, please click the "Home" button.</p>
+<p>If you want to return to the overview page, please click the "Home" button.</p>
 </div>
 
 <div class ="container" div id="loginLayer" style=" visibility:hidden;">
-<p>For the security issues, user needs to be authenticated to use the chat service. The Login page contains several forms to be filled in. "Nickname" is the name which will appear in the channel when user sends messages. User can use the dropdown list to select server. If the "other" option is chosen, then user need to fill in the corresponding "Host" and "Port" to connect to that server. 
+<p>The Login page contains several forms to be filled in. </p>
+<p>"Nickname" is the name of the IRC server. </p>
+<p>User can use the dropdown list to select server. If the "other" option is chosen, then user need to fill in the corresponding "Host" and "Port" to connect to that server. </p>
+<p>For security issues, some channels may require the autentication. User need to click the "Auth" checkbox and then insert their username and password to login.</p> 
 </div>
 
 <div class ="container" div id="mainLayer" style=" visibility:hidden;">
-<p>The main page has been divided into 3 parts. The panel on the right lists all the users who are available currently.</p>
-</div>
-
-<div class ="container" div id="cpLayer" style=" visibility: hidden;">
-<p>Copyright 2013 by David A. Sturrock, Dean Thomson, Simon T. Walker and Ximeng Bao.</p>
+<p>The main page has been divided into 3 panels.</p>
+<p>The panel on the left shows current topics happening in the channel.</p> 
+<p>The panel in the center shows the sent messages from all users in the selected channels. User can send their own message by using the dialgue box at the bottom of the center panel.</p>
+<p>The panel on the right lists all the users who are currently available.</p>
 </div>
 
 <div id="footer">
 	<div id="foot-left">
 		<p>
       <a href="http://validator.w3.org/check?uri=referer"><img
-          src="http://www.w3.org/Icons/valid-xhtml10"
+          src="http://www.w3.org/Icons/valid-xhtml10-blue"
           alt="Valid XHTML 1.0!" height="31" width="88" /></a>
+	  <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+            alt="Valid CSS!" />
+    </a>
     </p>
 	</div>
 	<div id="foot-right">
-		<p>Developed by X Bao, D Sturrock, D Thomson and S Walker</p>
-</div>
-
+		<p>Developed by: X Bao, D Sturrock, D Thomson and S Walker</p>
+	</div>
 </div>
 </body>
 </html>

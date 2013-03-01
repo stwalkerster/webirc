@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>IRC Client</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<!--Javascript section to handle form validation-->
+<script type="text/javascript" src="form.js">
+
+</script>
+<div id="header"><h1>IRC Client</h1></div>
+<div id="content">
+	<div id="formfloat">
+		<!--Form to handle the login and authentication data to be passed to the IRC client-->
+		<form id ="irclogin" action="/irc.html" onsubmit="return formValidation()">
+			<p><label>Nickname</label><input id="nickname" name="nick" value="" type="text" onchange="validNickname()"/></p>
+			<p><label>Server</label><select id="serverselect" name="server" onchange="checkOther()">
+				<option value="">Please select a server</option>
+				<option value="test">Test Server</option>
+				<option value="Server2">Server 2</option>
+				<option value="other">Other</option>
+				</select></p>
+			<p id="hostname" style="display:none"><label>Host</label><input name="host" type="text" /></p>
+			<p id="port" style="display:none"><label>Port</label><input name="port" type="text" /></p>
+			<p><label>Channel</label><input name="channel" type="text"/></p>
+			<p><label>Auth</label><input id="auth" name="auth" type="checkbox" onclick="authenticate()"/></p>
+			<p id="username" style="display:none"><label>Username</label><input name="user" type="text" onchange="validUsername()" /></p>
+			<p id="password" style="display:none"><label>Password</label><input name="password" type="text" onchange="validPassword()" /></p>
+			<input class="submit" type="submit" value="submit"/>
+		</form>
+	</div>
+</div>
+<?php include("foot.inc.php");?>
