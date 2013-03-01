@@ -1,40 +1,94 @@
 body {
 	padding: 0px;
 	margin: 0px;
-	background-color:grey;
+	background-color:#1E1E1E;
+	font-family:Arial, Helvetica, sans-serif;
 }
+
+/* HEADER START */
+
 #header {
-	background-color:red;
+	background-color:#292929;
 }
 #header h1 {
-	background-color:orange;
+	color:white;
 	margin: 0em 0em 0em 4em;
 }
 
+/* HEADER END */
+
+/* CONTENT START */
+
 #content {
+	
+}
+
+#formfloat {
+	margin:auto;
+	margin-top:5em;
+	background-color:#292929;
+	color:white;
+	border:1px solid black;
+	border-radius:10px;
+	width:25em;
+}
+
+
+#formfloat label {
+	width:4em;
+	float:left;
+	text-align:right;
+	margin-left:3em;
+	display:block;
+}
+
+
+#formfloat input, select  {
+	width:15em;
+	background-color:#949494;
+	border:2px solid black;
+	margin-left:1em;
+	font-weight:bold;
+	padding-left:5px;
+	padding-right:5px;
+	text-align:center;
+}
+
+#formfloat .submit {
+	width:auto;
+}
+
+#formfloat .submit:hover {
 	background-color:green;
 }
-#formfloat {
-	background-color:lime;
-	width:20em;
-}
+
+/* CONTENT END */
+
+/* FOOTER START */
 
 #footer {
-position:absolute;
-   bottom:0;
-   width:100%;
-   height:60px;   /* Height of the footer */
-	background-color:blue;
+	position:absolute;
+	bottom:0;
+	width:100%;
+	height:60px;   /* Height of the footer */
+	background-color:#292929;
+	color:white;
 }
+
+#footer p {
+	margin-left:2em;
+	margin-right:2em;
+}
+
 #foot-left {
-	background-color:cyan;
 	width:50%;
 	height:60px;
-	
 	float:left;
 }
-#foot-right {
-	background-color:magenta;
 
+#foot-right {
+	width:50%;
 	float:right;
 }
+
+/* FOOTER END */
