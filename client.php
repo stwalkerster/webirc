@@ -6,8 +6,13 @@
 </head>
 <body>
 <div id="header"><h1>IRC Client</h1></div>
-<div id="content">
-<!--<applet>-->
+<div id="content"><div id="applet"><object type="application/x-java-applet"
+    name="irc" width="800" height="600">
+    <param name="codebase" value="java/bin" />
+    <param name="code" value="Client.class" />
+    <param name="scriptable" value="true" />
+    <param name="mayscript" value="true" />
+</object></div>
 </div>
 <div id="footer">
 	<div id="foot-left">
