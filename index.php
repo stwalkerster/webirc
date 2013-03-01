@@ -14,7 +14,7 @@
 			<p id="hostname" style="display:none"><label>Host</label><input name="host" type="text" /></p>
 			<p id="port" style="display:none"><label>Port</label><input name="port" type="text" /></p>
 			<p><label>Channel</label><input name="channel" type="text"/></p>
-			<p><label>Auth to services</label><input id="auth" name="auth" type="checkbox" onclick="authenticate()"/></p>
+			<p><label>Auth</label><input id="auth" name="auth" type="checkbox" onclick="authenticate()"/></p>
 			<p id="username" style="display:none"><label>Username</label><input name="user" type="text" onchange="validUsername()" /></p>
 			<p id="password" style="display:none"><label>Password</label><input name="password" type="text" onchange="validPassword()" /></p>
 			<input class="submit" type="submit" value="submit"/>
