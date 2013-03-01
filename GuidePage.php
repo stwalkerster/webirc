@@ -15,9 +15,6 @@
 }
 
 </style>
-
-</head>
-<body>
 <script type="text/javascript" >
 function showDiffLayer(int){
 	if(int == 1){
@@ -44,7 +41,10 @@ function mainPage(){
 	location.href="overview.php";
 }
 </script>
+</head>
 
+
+<body>
 <div id="header"><h1>IRC Client</h1>
 </div>
 
@@ -72,12 +72,12 @@ function mainPage(){
 
 </div>
 
-<div class ="container"  id="introLayer" style=" visibility:visible;"> 
+<div class ="container" id="introLayer" style=" visibility:visible;"> 
 <p>Welcome to the chat forum. You can select the above buttons to view the guide information for each part of the website.</p>
 <p>If you want to return to the overview page, please click the "Home" button.</p>
 </div>
 
-<div class ="container"  id="loginLayer" style=" visibility:hidden;">
+<div class ="container" id="loginLayer" style=" visibility:hidden;">
 <p>The Login page contains several forms to be filled in. </p>
 <p>"Nickname" is the name of the IRC server. </p>
 <p>User can use the dropdown list to select server. If the "other" option is chosen, then user need to fill in the corresponding "Host" and "Port" to connect to that server. </p>
