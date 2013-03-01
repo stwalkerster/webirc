@@ -5,19 +5,65 @@
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<!--Javascript section to handle form validation-->
+<script type="text/javascript">
+function formValidation(){
+if(!validNickname()){return false;}
+else if(!validPort()){return false;}
+else if(!validUsername()){return false;}
+else if(!validPassword()){return false;}
+else {return true;}
+}
+<!--Javascript to add extra form fields when certain criteria are met-->
+function checkOther(){
+	var selectBox = document.getElementById("serverselect");
+	var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+	if(selectedValue=="other"){
+		document.getElementById('hostname').style.display="block";
+		document.getElementById('port').style.display="block";
+		}
+	else{
+		document.getElementById('hostname').style.display="none";
+		document.getElementById('port').style.display="none";
+		}
+
+}
+
+function authenticate(){
+	if(document.getElementById('auth').checked){
+		document.getElementById("username").style.display="block";
+		document.getElementById("password").style.display="block";
+		}
+	else
+		{
+		document.getElementById("username").style.display="none";
+		document.getElementById("password").style.display="none";
+		}
+}
+</script>
 <div id="header"><h1>IRC Client</h1></div>
 <div id="content">
 	<div id="formfloat">
-		<form>
-			<p><label>Nickname<input name="text" /></label></p>
-			<p><label>Server<input name="text" /></label></p>
-			<p><label>Host<input name="text" /></label></p>
-			<p><label>Port<input name="text" /></label></p>
-			<p><label>Username<input name="text" /></label></p>
-			<p><label>Password<input name="text" /></label></p>
+		<!--Form to handle the login and authentication data to be passed to the IRC client-->
+		<form id ="irclogin" action="/irc.html" onsubmit="formValidation()">
+			<p><label>Nickname<input name="nick" type="text" required/></label></p>
+			<p><label>Server<select id="serverselect" name="server" onchange="checkOther()" required>
+				<option value="">Please select a server</option>
+				<option value="test">Test Server</option>
+				<option value="Server2">Server 2</option>
+				<option value="other">Other</option>
+				</select></label></p>
+			<p id="hostname" style="display:none"><label>Host<input name="host" type="text" /></label></p>
+			<p id="port" style="display:none"><label>Port<input name="port" type="text" /></label></p>
+			<p><label>Channel<input name="channel" type="text" required/></label></p>
+			<p><label>Auth<input id="auth" name="auth" type="checkbox" onclick="authenticate()"/></label></p>
+			<p id="username" style="display:none"><label>Username<input name="user" type="text" /></label></p>
+			<p id="password" style="display:none"><label>Password<input name="password" type="text" /></label></p>
+			<p><input type="submit" value="submit"/></p>
 		</form>
 	</div>
 </div>
+
 <div id="footer">
 	<div id="foot-left">
 		<p>Valid stuff</p>
