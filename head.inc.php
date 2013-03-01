@@ -6,8 +6,13 @@ function createHeader($title, $scripts = array()) {
 		<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 		<title>'.$title.'</title>
-		<link rel="stylesheet" href="style.css" />
-		</head>
+		<link rel="stylesheet" href="style.css" />';
+	
+	foreach($scripts as $s) {
+		echo '<script type="text/javascript" src="'.$s.'" />';
+	}
+	
+	echo '</head>
 		<body>
 		<div id="header"><h1>'.$title.'</h1></div>';
 }
