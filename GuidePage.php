@@ -79,7 +79,7 @@ function mainPage(){
 
 <div class ="container" id="loginLayer" style=" visibility:hidden;">
 <p>The Login page contains several forms to be filled in. </p>
-<p>"Nickname" is the name of the IRC server. </p>
+<p>"Nickname" is the name of the IRC client. </p>
 <p>User can use the dropdown list to select server. If the "other" option is chosen, then user need to fill in the corresponding "Host" and "Port" to connect to that server. </p>
 <p>For security issues, some channels may require the autentication. User need to click the "Auth" checkbox and then insert their username and password to login.</p> 
 </div>
