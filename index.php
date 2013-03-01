@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <title>IRC Client</title>
 <link rel="stylesheet" href="style.css" />
 </head>
@@ -47,8 +47,8 @@ function authenticate(){
 	<div id="formfloat">
 		<!--Form to handle the login and authentication data to be passed to the IRC client-->
 		<form id ="irclogin" action="/irc.html" onsubmit="formValidation()">
-			<p><label>Nickname</label><input name="nick" type="text" required/></p>
-			<p><label>Server</label><select id="serverselect" name="server" onchange="checkOther()" required>
+			<p><label>Nickname</label><input name="nick" type="text" /></p>
+			<p><label>Server</label><select id="serverselect" name="server" onchange="checkOther()" >
 				<option value="">Please select a server</option>
 				<option value="test">Test Server</option>
 				<option value="Server2">Server 2</option>
@@ -56,7 +56,7 @@ function authenticate(){
 				</select></p>
 			<p id="hostname" style="display:none"><label>Host</label><input name="host" type="text" /></p>
 			<p id="port" style="display:none"><label>Port</label><input name="port" type="text" /></p>
-			<p><label>Channel</label><input name="channel" type="text" required/></p>
+			<p><label>Channel</label><input name="channel" type="text" /></p>
 			<p><label>Auth</label><input id="auth" name="auth" type="checkbox" onclick="authenticate()"/></p>
 			<p id="username" style="display:none"><label>Username</label><input name="user" type="text" /></p>
 			<p id="password" style="display:none"><label>Password</label><input name="password" type="text" /></p>
@@ -65,22 +65,4 @@ function authenticate(){
 	</div>
 </div>
 
-<div id="footer">
-	<div id="foot-left">
-		<p>
-      <a href="http://validator.w3.org/check?uri=referer"><img
-          src="http://www.w3.org/Icons/valid-xhtml10-blue"
-          alt="Valid XHTML 1.0!" height="31" width="88" /></a>
-	  <a href="http://jigsaw.w3.org/css-validator/check/referer">
-        <img style="border:0;width:88px;height:31px"
-            src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
-            alt="Valid CSS!" />
-    </a>
-    </p>
-	</div>
-	<div id="foot-right">
-		<p>Developed by: X Bao, D Sturrock, D Thomson and S Walker</p>
-	</div>
-</div>
-</body>
-</html>
+<?php include("foot.inc.php");?>

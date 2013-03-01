@@ -1,4 +1,4 @@
-package com.stwalkerster.apps.uni.webirc;
+
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
