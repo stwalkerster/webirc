@@ -29,8 +29,9 @@ body {
 	background-color:#292929;
 	color:white;
 	border:1px solid black;
-	border-radius:10px;
+	border-radius:10px; /* CSS3 */ 
 	width:25em;
+	padding-bottom:5px;
 }
 
 
@@ -43,7 +44,7 @@ body {
 }
 
 
-#formfloat input, select  {
+#formfloat input  {
 	width:15em;
 	background-color:#949494;
 	border:2px solid black;
@@ -54,8 +55,24 @@ body {
 	text-align:center;
 }
 
+#formfloat select {
+	width:16em;
+	background-color:#949494;
+	border:2px solid black;
+	margin-left: 1em;
+	font-weight:bold;
+	padding-left:5px;
+}
+
 #formfloat .submit {
 	width:auto;
+	float:none;
+	display:block;
+	margin:10px auto;
+}
+
+#formfloat hr {
+	color:black;
 }
 
 #formfloat .submit:hover {
