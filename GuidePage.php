@@ -90,6 +90,5 @@ function mainPage(){
 <p>The panel in the center shows the sent messages from all users in the selected channels. User can find the details of the current topic in selected channels at the top of the center panel and send their own message by using the dialgue box at the bottom of the center panel.</p>
 <p>The panel on the right lists all the users who are currently available.</p>
 </div>
-</body>
 
 <?php /*include common footer*/ include("foot.inc.php");?>
