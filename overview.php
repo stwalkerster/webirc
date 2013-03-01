@@ -11,7 +11,7 @@
 	<ul>
 		<li><a href="index.php">Login form</a></li>
 		<li><a href="client.php">Client form</a></li>
-        <li><a href="GuidePage.html">Guide page</a></li>
+        <li><a href="GuidePage.php">Guide page</a></li>
 	</ul>
 	<h2>Other files</h2>
 	<ul>
