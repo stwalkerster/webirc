@@ -86,8 +86,8 @@ function mainPage(){
 
 <div class ="container" div id="mainLayer" style=" visibility:hidden;">
 <p>The main page has been divided into 3 panels.</p>
-<p>The panel on the left shows current topics happening in the channel.</p> 
-<p>The panel in the center shows the sent messages from all users in the selected channels. User can send their own message by using the dialgue box at the bottom of the center panel.</p>
+<p>The panel on the left shows the current channels which user is in.</p> 
+<p>The panel in the center shows the sent messages from all users in the selected channels. User can find the details of the current topic in selected channels at the top of the center panel and send their own message by using the dialgue box at the bottom of the center panel.</p>
 <p>The panel on the right lists all the users who are currently available.</p>
 </div>
 
