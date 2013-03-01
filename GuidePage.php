@@ -17,8 +17,8 @@
 </style>
 
 </head>
-
-<script>
+<body>
+<script type="text/javascript" >
 function showDiffLayer(int){
 	if(int == 1){
 		introLayer.style.visibility = "visible";
