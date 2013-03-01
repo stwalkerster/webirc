@@ -1,4 +1,4 @@
-<?php include("head.inc.php"); createHeader("IRC Client - Project Overview"); ?>
+<?php include("head.inc.php"); createHeader("IRC Client - Project Overview	"); ?>
 <div id="content">
 <div id="contenttext">
 <p>
@@ -9,7 +9,7 @@
 	
 	<h2>Pages</h2>
 	<ul>
-		<li><a href="index.html">Login form</a></li>
+		<li><a href="index.php">Login form</a></li>
 		<li><a href="client.php">Client form</a></li>
         <li><a href="GuidePage.html">Guide page</a></li>
 		<!--<li><a href="client.php">Help page</a></li>-->
