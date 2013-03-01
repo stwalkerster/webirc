@@ -57,16 +57,16 @@ function mainPage(){
 <table style="margin: 0em 0em 0em 35em;">
 	<tr>
     	<td>
-        	<button type="submit"id="b1" onclick="showDiffLayer(1)">Introduction</button>
+        	<button type="submit" id="b1" onclick="showDiffLayer(1)">Introduction</button>
         </td>
 		<td>
-  			<button type="submit"id="b2" onclick="showDiffLayer(2)">Login</button>
+  			<button type="submit" id="b2" onclick="showDiffLayer(2)">Login</button>
   		</td>
   		<td>
-  			<button type="submit"id="b3" onclick="showDiffLayer(3)">Mainpage</button>
+  			<button type="submit" id="b3" onclick="showDiffLayer(3)">Mainpage</button>
   		</td>
   		<td>
-  			<button type="submit"id="b4" onclick="mainPage()">Home</button>
+  			<button type="submit" id="b4" onclick="mainPage()">Home</button>
   		</td>
 	</tr>
 </table>

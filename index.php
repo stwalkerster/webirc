@@ -3,7 +3,7 @@
 <div id="content">
 	<div id="formfloat">
 		<!--Form to handle the login and authentication data to be passed to the IRC client-->
-		<form id ="irclogin" action="/irc.html" onsubmit="return formValidation()">
+		<form id ="irclogin" action="/client.php" method="post" onsubmit="return formValidation()">
 			<p><label>Nickname</label><input id="nickname" name="nick" value="" type="text" onchange="validNickname()"/></p>
 			<p><label>Server</label><select id="serverselect" name="server" onchange="checkOther()">
 				<option value="">Please select a server</option>
