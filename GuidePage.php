@@ -45,6 +45,7 @@ function mainPage(){
 }
 </script>
 
+<body>
 <div id="header"><h1>IRC Client</h1>
 </div>
 
@@ -72,23 +73,24 @@ function mainPage(){
 
 </div>
 
-<div class ="container" div id="introLayer" style=" visibility:visible;"> 
+<div class ="container" id="introLayer" style=" visibility:visible;"> 
 <p>Welcome to the chat forum. You can select the above buttons to view the guide information for each part of the website.</p>
 <p>If you want to return to the overview page, please click the "Home" button.</p>
 </div>
 
-<div class ="container" div id="loginLayer" style=" visibility:hidden;">
+<div class ="container" id="loginLayer" style=" visibility:hidden;">
 <p>The Login page contains several forms to be filled in. </p>
 <p>"Nickname" is the name of the IRC server. </p>
 <p>User can use the dropdown list to select server. If the "other" option is chosen, then user need to fill in the corresponding "Host" and "Port" to connect to that server. </p>
 <p>For security issues, some channels may require the autentication. User need to click the "Auth" checkbox and then insert their username and password to login.</p> 
 </div>
 
-<div class ="container" div id="mainLayer" style=" visibility:hidden;">
+<div class ="container" id="mainLayer" style=" visibility:hidden;">
 <p>The main page has been divided into 3 panels.</p>
 <p>The panel on the left shows the current channels which user is in.</p> 
 <p>The panel in the center shows the sent messages from all users in the selected channels. User can find the details of the current topic in selected channels at the top of the center panel and send their own message by using the dialgue box at the bottom of the center panel.</p>
 <p>The panel on the right lists all the users who are currently available.</p>
 </div>
+</body>
 
 <?php /*include common footer*/ include("foot.inc.php");?>
