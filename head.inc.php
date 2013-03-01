@@ -9,7 +9,7 @@ function createHeader($title, $scripts = array()) {
 		<link rel="stylesheet" href="style.css" />';
 	
 	foreach($scripts as $s) {
-		echo '<script type="text/javascript" src="'.$s.'" />';
+		echo '<script type="text/javascript" src="'.$s.'" ></script>';
 	}
 	
 	echo '</head>
