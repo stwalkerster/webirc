@@ -24,6 +24,13 @@ body {
 	
 }
 
+#content #contenttext {
+	color:white;
+}
+#content #contenttext a{
+	color:white;
+}
+
 #formfloat {
 	margin:auto;
 	margin-top:5em;
