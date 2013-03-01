@@ -16,7 +16,8 @@
 	<h2>Other files</h2>
 	<ul>
 		<li><a href="style.css">Stylesheet</a></li>
-		<li><a href="java/src/com/stwalkerster/apps/uni/webirc/Client.java">Client code</a></li>
+		<li><a href="java/src/Client.java">Client code</a></li>
+		<li><a href="form.js">Validation javascript</a></li>
 	</ul>
 	
 	
