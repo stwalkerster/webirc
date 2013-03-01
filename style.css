@@ -32,8 +32,8 @@ body {
 }
 
 #applet {
-	margin:auto;
-	margin-top:5em;
+	align:centre;
+	margin-top:1em;
 }
 
 #formfloat {
