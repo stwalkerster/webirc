@@ -16,7 +16,7 @@
 			<p><label>Auth</label><input id="auth" name="auth" type="checkbox" onclick="authenticate()"/></p>
 			<p id="username" style="display:none"><label>Username</label><input name="user" type="text" onchange="validUsername()" /></p>
 			<p id="password" style="display:none"><label>Password</label><input name="password" type="text" onchange="validPassword()" /></p>
-			<input class="submit" type="submit" value="submit"/>
+			<p><input class="submit" type="submit" value="submit"/></p>
 		</form>
 	</div>
 </div>
