@@ -8,8 +8,6 @@
 			<p><label>Server</label><select id="serverselect" name="server" onchange="checkOther()">
 				<option value="">Please select a network:</option>
 				<option value="chat.freenode.net">Freenode</option>
-				<option value="irc.quakenet.org">QuakeNet</option>
-				<option value="irc.chatjunkies.org">ChatJunkies</option>
 				<option value="other">Other</option>
 				</select></p>
 			<p id="hostname" style="display:none"><label>Host</label><input name="host" type="text" /></p>
