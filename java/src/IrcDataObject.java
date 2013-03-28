@@ -7,10 +7,13 @@ public class IrcDataObject {
 	
 	IrcAbstractionLayer irc;
 	
+	boolean _fromserver;
 	
 	IrcIdentifier prefix;
 	String command;
 	String[] parameters;
+	
+	String noprefix;
 	
 	public IrcDataObject (String rawData, IrcAbstractionLayer irc) {
 		this.irc = irc;
@@ -22,6 +25,8 @@ public class IrcDataObject {
 					);
 			rawData = rawData.substring( rawData.indexOf( ' ' ) + 1 );
 		} // end of prefix search
+		
+		noprefix = rawData;
 		
 		// command
 		command = rawData.substring( 0, rawData.indexOf( ' ' ) );
@@ -35,7 +40,7 @@ public class IrcDataObject {
 			String extendedParams;
 			
 			// split by " :", then the first bit by spaces.
-			String[] temp = rawData.split( " :" );
+			String[] temp = rawData.split( " :", 2 );
 			paramStage1 = temp[0].split(" ");
 			extendedParams = temp[1];
 			
@@ -65,6 +70,21 @@ public class IrcDataObject {
 	public boolean handled()
 	{
 		return _handled;
+	}
+	
+	public boolean isFromServer() {
+		return _fromserver;	
+	}
+	
+	public void isFromServer(boolean fromserver) {
+		_fromserver = fromserver;
+	}
+	
+	public String toHumanString(){
+	
+		
+		
+		return rawdata;
 	}
 	
 }

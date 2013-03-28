@@ -1,7 +1,7 @@
 public class IrcIdentifier {
-	private String nickname = null;
-	private String username = null;
-	private String hostname = null;
+	String nickname = null;
+	String username = null;
+	String hostname = null;
 
 	public IrcIdentifier( String nick, String user, String host ) {
 		nickname = nick;
