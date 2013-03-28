@@ -12,7 +12,7 @@
 <div id="content">
 	<div id="applet">
 		<object type="application/x-java-applet" name="irc" width="800" height="600">
-			<param name="codebase" value="java/bin" />
+			<param name="archive" value="client.jar?mtime=<?php echo filemtime("client.jar"); ?>" />
 			<param name="code" value="Client.class" />
 			<param name="scriptable" value="true" />
 			<param name="mayscript" value="true" />
