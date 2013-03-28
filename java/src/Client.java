@@ -23,7 +23,12 @@ public class Client extends JApplet implements IIrcDataListener {
 		channels.setListData( new String[] { } );
 		users.setListData( new String[] {  } );
 		
-		irc = new IrcAbstractionLayer( "irc.freenode.net", 6667, "clienttest", "stw", "S Walker" );
+		String loginpw = "";
+		if( (!getParameter("user").equals("")) &&( !getParameter("password").equals(""))) {
+			loginpw = getParameter("user") + ":" + getParameter("password");
+		}
+		
+		irc = new IrcAbstractionLayer( getParameter("host"), Integer.parseInt( getParameter("port")), getParameter("nick"), "f21na", "F21NA Network Applications coursework", loginpw );
 		irc.addDataEventListener( this );
 		irc.connect();
 		
@@ -84,10 +89,15 @@ public class Client extends JApplet implements IIrcDataListener {
 	public void handleIrcDataEvent( IrcDataObject dataobj ) {
 		String rawdata = dataobj.toString();
 		
-		if(! rawdata.equals( "null" )) {
-			textarea.setText( textarea.getText() + "\r\n" + dataobj.toString() );
+		if( rawdata.equals( "null" )) {
+			irc.removeDataEventListener( this );
+			return;
 		}
 		
+
+		textarea.setText( textarea.getText() + "\r\n" + dataobj.toString() );
+		
+		// move view to bottom.
 		textarea.select(textarea.getDocument().getLength(),textarea.getDocument().getLength());
 	}
 }

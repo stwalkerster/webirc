@@ -17,7 +17,6 @@ public class IrcWriterThread extends Thread {
 		synchronized( this ) {
 			sendQ.add(line);
 		}
-		System.out.println("IRC-SendQ: " + line);
 	}
 	
 	public void run() {

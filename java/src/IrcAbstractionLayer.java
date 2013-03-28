@@ -10,8 +10,8 @@ public class IrcAbstractionLayer {
 	PrintWriter out = null;
 	BufferedReader in = null;
 	
-	String server;
-	int port;
+	String serverDnsName;
+	int serverTcpPort;
 	String nickname;
 	String username;
 	String realname;
@@ -19,6 +19,8 @@ public class IrcAbstractionLayer {
 	
 	IrcWriterThread writer;
 	IrcReaderThread reader;
+	
+	String server = "";
 	
 	private List<IIrcDataListener> _dataEventListeners = new ArrayList<IIrcDataListener>();
 	public synchronized void addDataEventListener(IIrcDataListener listener) {
@@ -29,11 +31,21 @@ public class IrcAbstractionLayer {
 	}
 	
 	public IrcAbstractionLayer(String server, int port, String nickname, String username, String realname ) {
-		this.server = server;
-		this.port = port;
+		this.serverDnsName = server;
+		this.serverTcpPort = port;
 		this.nickname = nickname;
 		this.username = username;
 		this.realname = realname;
+		this.password = "";
+	}
+	
+	public IrcAbstractionLayer(String server, int port, String nickname, String username, String realname, String password ) {
+		this.serverDnsName = server;
+		this.serverTcpPort = port;
+		this.nickname = nickname;
+		this.username = username;
+		this.realname = realname;
+		this.password = password;
 	}
 	
 	/**
@@ -42,7 +54,7 @@ public class IrcAbstractionLayer {
 	 */
 	public boolean connect() {
 		try {
-			_connection = new Socket( this.server, this.port );
+			_connection = new Socket( this.serverDnsName, this.serverTcpPort );
 			
 			out = new PrintWriter( _connection.getOutputStream() );
 			in = new BufferedReader( new InputStreamReader (_connection.getInputStream() ));
@@ -72,7 +84,6 @@ public class IrcAbstractionLayer {
 		try {
 			return in.readLine();
 		} catch ( IOException e ) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return "";
@@ -80,7 +91,8 @@ public class IrcAbstractionLayer {
 	
 	public void fireDataEvent(String data) {
 		IrcDataObject dobj = new IrcDataObject( data );
-		Iterator i = _dataEventListeners.iterator();
+		
+		Iterator<IIrcDataListener> i = _dataEventListeners.iterator();
 		while(i.hasNext()){
 			((IIrcDataListener)i.next()).handleIrcDataEvent( dobj );
 		}
@@ -107,6 +119,12 @@ public class IrcAbstractionLayer {
 	}
 
 	private void registerConnection() {
+		
+		send("CAP END"); // IRCv3 (http://ircv3.org/) - we don't want any client extensions, pure RFC1459/2812 is good.
+		
+		if(!this.password.equals("")){
+			send("PASS " + password );
+		}
 		send("USER " + username + " * * :" + realname);
 		send("NICK " + nickname);
 	}
