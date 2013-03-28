@@ -92,13 +92,15 @@ public class IrcAbstractionLayer {
 	public void fireDataEvent(String data) {
 		IrcDataObject dobj = new IrcDataObject( data, this );
 
-		if(server.equals(""))
+		if(server.equals("") && dobj.prefix != null)
 		{
 			// server is always the first thing to send us anything
 			server = dobj.prefix.toString();
 		}
 		
-		if(dobj.prefix.nickname.equals(server)) dobj.isFromServer(true);
+		if(dobj.prefix != null) {
+			if(dobj.prefix.nickname.equals(server)) dobj.isFromServer(true);
+		}
 		
 		if( dobj.handled() ) {
 			// the data has been dealt with, it's fine, go away.

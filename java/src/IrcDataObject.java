@@ -1,6 +1,5 @@
 import java.util.Arrays;
 
-
 public class IrcDataObject {
 	String rawdata;
 	boolean _handled = false;
@@ -25,7 +24,9 @@ public class IrcDataObject {
 					);
 			rawData = rawData.substring( rawData.indexOf( ' ' ) + 1 );
 		} // end of prefix search
-		
+		else {
+			prefix = new IrcIdentifier();
+		}
 		noprefix = rawData;
 		
 		// command
@@ -57,10 +58,9 @@ public class IrcDataObject {
 	
 	private boolean handleMessage() {
 		if(command.equals( "PING" )) {
-			irc.send( "PONG :" + parameters[0] );
+			irc.send( "PONG " + parameters[0] );
 			return true;
 		}
-		
 		
 		return false;
 	}
@@ -81,9 +81,6 @@ public class IrcDataObject {
 	}
 	
 	public String toHumanString(){
-	
-		
-		
 		return rawdata;
 	}
 	

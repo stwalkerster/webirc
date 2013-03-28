@@ -18,6 +18,12 @@ public class IrcIdentifier {
 		nickname = nick;
 	}
 
+	public IrcIdentifier() {
+		nickname="";
+		username="";
+		hostname="";
+	}
+
 	public static IrcIdentifier newFromString( String source ) {
 		String user, host;
 		String nick = user = host = null;

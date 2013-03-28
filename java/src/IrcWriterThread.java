@@ -1,6 +1,5 @@
 import java.util.LinkedList;
 
-
 public class IrcWriterThread extends Thread {
 
 	IrcAbstractionLayer irc;
@@ -24,7 +23,6 @@ public class IrcWriterThread extends Thread {
 			String buffer = sendQ.poll();
 			
 			if(buffer != null){
-				
 				
 				irc.writeLine( buffer );
 				try {
