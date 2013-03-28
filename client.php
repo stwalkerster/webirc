@@ -7,12 +7,15 @@
 		$host = $_POST['server'];
 		$port = 6667;
 	}
-
-	$nick = $_POST['nick'];
-	$user = $_POST['user'];
-	$password = $_POST['password'];
 	
-	// Params retreived in the applet by: String hostname = getParameter("hostname");
+	if(isset($_POST['nick'])) { $nick = $_POST['nick']; }
+		else { header("Location: index.php"); }
+	
+	// If these variables are not set, set them to an empty string.
+	$user = isset($_POST['user']) ? $_POST['user'] : "";
+	$password = isset($_POST['password']) ? $_POST['password'] : "";
+	
+
 	
 ?>
 <div id="content">
