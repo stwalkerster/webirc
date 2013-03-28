@@ -90,7 +90,12 @@ public class IrcAbstractionLayer {
 	}
 	
 	public void fireDataEvent(String data) {
-		IrcDataObject dobj = new IrcDataObject( data );
+		IrcDataObject dobj = new IrcDataObject( data, this );
+
+		if( dobj.handled() ) {
+			// the data has been dealt with, it's fine, go away.
+			return;
+		}
 		
 		Iterator<IIrcDataListener> i = _dataEventListeners.iterator();
 		while(i.hasNext()){

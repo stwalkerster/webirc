@@ -1,5 +1,4 @@
 
-
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -32,13 +31,25 @@ public class Client extends JApplet implements IIrcDataListener {
 		irc.addDataEventListener( this );
 		irc.connect();
 		
-		send.addActionListener( new ActionListener() {
-			@Override
+		ActionListener listener = new ActionListener() {
 			public void actionPerformed( ActionEvent arg0 ) {
 				irc.send( input.getText() );
 				input.setText( "" );
 			}
-		} );
+		};
+		
+		send.addActionListener( listener );
+		
+		String keyStrokeAndKey = "ENTER";
+		KeyStroke keyStroke = KeyStroke.getKeyStroke(keyStrokeAndKey);
+		input.getInputMap().put(keyStroke, keyStrokeAndKey);
+		input.getActionMap().put(keyStrokeAndKey, new AbstractAction() {
+			private static final long serialVersionUID = 3735017923997908076L;
+			public void actionPerformed( ActionEvent e ) {
+				irc.send( input.getText() );
+				input.setText( "" );
+			}
+		});
 		
 	}
 
@@ -55,6 +66,7 @@ public class Client extends JApplet implements IIrcDataListener {
 		users.setPreferredSize( new Dimension( 150, 0 ) );
 		input = new JTextArea("");
 		
+		input.setRows( 1 );
 		
 		
 		textarea = new JTextArea("");
