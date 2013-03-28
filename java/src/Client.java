@@ -82,7 +82,12 @@ public class Client extends JApplet implements IIrcDataListener {
 
 	@Override
 	public void handleIrcDataEvent( IrcDataObject dataobj ) {
-		textarea.setText( textarea.getText() + "\r\n" + dataobj.toString() );
+		String rawdata = dataobj.toString();
+		
+		if(! rawdata.equals( "null" )) {
+			textarea.setText( textarea.getText() + "\r\n" + dataobj.toString() );
+		}
+		
 		textarea.select(textarea.getDocument().getLength(),textarea.getDocument().getLength());
 	}
 }
