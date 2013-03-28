@@ -33,6 +33,9 @@ body {
 
 #applet {
 	margin-top:1em;
+	width: 800px;
+	height: 600px;
+	margin: auto;
 }
 
 #formfloat {

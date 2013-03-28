@@ -10,6 +10,7 @@
 				<option value="chat.freenode.net">Freenode</option>
 				<option value="irc.quakenet.org">QuakeNet</option>
 				<option value="irc.chatjunkies.org">ChatJunkies</option>
+				<option value="other">Other</option>
 				</select></p>
 			<p id="hostname" style="display:none"><label>Host</label><input name="host" type="text" /></p>
 			<p id="port" style="display:none"><label>Port</label><input name="port" type="text" /></p>
