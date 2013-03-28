@@ -1,19 +1,21 @@
 <?php include("head.inc.php"); createHeader("IRC Client");
 
-	// Server side input validation
-	// If server, port or nick is not provided, go back to the index page
-	// Author: Dean Thomson
+	if($_POST['server'] == "other") {
+		$host = $_POST['host'];
+		$port = $_POST['port'];
+	} else {
+		$host = $_POST['server'];
+		$port = 6667;
+	}
 	
-	if(isset($_POST['server'])) { $host = $_POST['server']; }
-		else { header("Location: index.php"); }
-	if(isset($_POST['port'])) { $post = $_POST['port']; }
-		else { header("Location: index.php"); }
 	if(isset($_POST['nick'])) { $nick = $_POST['nick']; }
 		else { header("Location: index.php"); }
 	
 	// If these variables are not set, set them to an empty string.
 	$user = isset($_POST['user']) ? $_POST['user'] : "";
 	$password = isset($_POST['password']) ? $_POST['password'] : "";
+	
+
 	
 ?>
 <div id="content">
