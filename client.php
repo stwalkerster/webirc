@@ -1,7 +1,13 @@
 <?php include("head.inc.php"); createHeader("IRC Client");
 
-	$host = $_POST['server'];
-	$port = 6667;
+	if($_POST['server'] == "other") {
+		$host = $_POST['host'];
+		$port = $_POST['port'];
+	} else {
+		$host = $_POST['server'];
+		$port = 6667;
+	}
+
 	$nick = $_POST['nick'];
 	$user = $_POST['user'];
 	$password = $_POST['password'];
